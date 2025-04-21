@@ -1,149 +1,70 @@
-Modern, responsive website for a software development company
+# 🌐 SoftNova Labs
 
-Table of Contents
-Features
+A modern, responsive website template for a software development company. Built with clean, semantic code and optimized for performance and customization.
 
-Technologies Used
+---
 
-Installation
+## 📑 Table of Contents
 
-Project Structure
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Project Structure](#project-structure)
+- [Customization](#customization)
+- [Browser Support](#browser-support)
+- [License](#license)
+- [Credits](#credits)
 
-Customization
+---
 
-Browser Support
+## ✨ Features
 
-License
+### Responsive Design
+- Fully adaptive layout for mobile, tablet, and desktop
+- Mobile-first approach with progressive enhancement
+- Flexible grid and card-based components
 
-Credits
+### Modern UI Components
+- Interactive service tabs with smooth transitions
+- Testimonial carousel
+- Contact form with validation
+- Animated mobile navigation
+- Back-to-top floating button
 
-Features ✨
-Responsive Design
-Fully adaptive layout for all devices (mobile, tablet, desktop)
+### Performance Optimized
+- Lightweight: under 500KB total
+- Fast-loading assets
+- Minimal external dependencies
 
-Mobile-first approach with progressive enhancement
+### Developer Friendly
+- Clean, semantic HTML5 structure
+- Tailwind CSS utility-first styling
+- Well-commented JavaScript
+- Easy to customize and scale
 
-Flexible grid and card components
+---
 
-Modern UI Components
-Interactive service tabs with smooth transitions
+## 🛠️ Technologies Used
 
-Testimonial carousel
+### Core
+- HTML5
+- CSS3
+- JavaScript (ES6)
 
-Contact form with validation
+### Frameworks & Libraries
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Remix Icon](https://remixicon.com/)
 
-Back-to-top floating button
+### Fonts
+- [Inter](https://fonts.google.com/specimen/Inter) (UI font)
+- [Pacifico](https://fonts.google.com/specimen/Pacifico) (Logo font)
 
-Animated mobile navigation
+---
 
-Performance Optimized
-Lightweight (under 500KB total)
+## 💻 Installation
 
-Fast-loading assets
+Clone the repository:
 
-Minimal dependencies
-
-Developer Friendly
-Clean, semantic HTML5
-
-Tailwind CSS utility classes
-
-Well-commented JavaScript
-
-Easy-to-modify structure
-
-Technologies Used 🛠️
-Core:
-
-HTML5
-
-CSS3
-
-JavaScript
-
-Frameworks & Libraries:
-
-Tailwind CSS
-
-Remix Icons
-
-Fonts:
-
-Inter (Google Fonts)
-
-Pacifico (Logo font)
-
-Installation 💻
-Clone the repository
-
-bash
-git clone https://github.com/yourusername/softnova-labs.git
-cd softnova-labs
-Open in browser
-
-Double-click index.html or
-
-Use Live Server extension in VS Code
-
-For development
-
-Install Tailwind CSS (if modifying styles)
-
-bash
-npm install -D tailwindcss
-npx tailwindcss init
-Project Structure 📂
-softnova-labs/
-├── index.html              # Main website file
-├── css/
-│   └── styles.css          # Additional custom styles
-├── js/
-│   └── script.js           # Interactive functionality
-├── images/                 # All visual assets
-│   ├── hero-bg.jpg         # Hero section background
-│   ├── service-dev.jpg     # Services image
-│   └── team/               # Team member photos
-├── README.md               # This documentation
-└── .gitignore              # Git exclusion rules
-Customization 🎨
-Change Colors:
-
-html
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          primary: '#your-hex-code',  // Main brand color
-          secondary: '#your-hex-code' // Secondary color
-        }
-      }
-    }
-  }
-</script>
-Update Content:
-
-Replace placeholder text in HTML
-
-Add/remove feature cards in the Features section
-
-Modify the services tabs in the Services section
-
-Browser Support 🌐
-Browser	Version	Status
-Chrome	90+	✅
-Firefox	88+	✅
-Safari	14+	✅
-Edge	91+	✅
-Mobile	iOS/Android	✅
-License 📜
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Credits 🙏
-Hero image from Unsplash
-
-Icons by Remix Icon
-
-Fonts from Google Fonts
-
-Happy Coding! 🚀
+```bash
+git clone https://github.com/AbdirashidHaji/siftnova-labs.git
+cd siftnova-labs
