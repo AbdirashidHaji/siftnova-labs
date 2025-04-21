@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftNova Labs - Innovative Software Solutions</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#2563eb',secondary:'#60a5fa'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-section {
+            background-image: linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.3) 100%), 
+                              url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        @media (max-width: 768px) {
+            .hero-section {
+                background-image: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0.3) 100%), 
+                                  url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');
+            }
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <div class="w-8 h-8 flex items-center justify-center bg-primary rounded-full mr-2">
+                    <i class="ri-code-s-slash-line text-white"></i>
+                </div>
+                <span class="font-['Pacifico'] text-xl text-primary">SoftNova Labs</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-gray-900 font-medium">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-primary transition">Services</a>
+                <a href="#features" class="text-gray-600 hover:text-primary transition">Features</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-primary transition">Testimonials</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary transition">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden w-10 h-10 flex items-center justify-center">
+                <i class="ri-menu-line text-gray-700 ri-lg"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#" class="py-2 text-gray-900 font-medium border-b border-gray-100">Home</a>
+                <a href="#services" class="py-2 text-gray-600 hover:text-primary transition border-b border-gray-100">Services</a>
+                <a href="#features" class="py-2 text-gray-600 hover:text-primary transition border-b border-gray-100">Features</a>
+                <a href="#testimonials" class="py-2 text-gray-600 hover:text-primary transition border-b border-gray-100">Testimonials</a>
+                <a href="#contact" class="py-2 text-gray-600 hover:text-primary transition border-b border-gray-100">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-16 md:py-20">
+        <div class="container mx-auto px-4 w-full">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">Innovative <span class="text-primary">Software Solutions</span></h1>
+                    <p class="text-base sm:text-lg text-gray-700 mb-8 max-w-lg">Transforming ideas into powerful software solutions. We help businesses navigate the digital landscape with cutting-edge technology.</p>
+                    <div class="flex flex-wrap gap-3 sm:gap-4">
+                        <button class="bg-primary text-white px-5 py-2 sm:px-6 sm:py-3 font-medium !rounded-button hover:bg-blue-600 transition whitespace-nowrap">Get Started</button>
+                        <button class="bg-white text-primary px-5 py-2 sm:px-6 sm:py-3 font-medium border border-primary !rounded-button hover:bg-gray-50 transition whitespace-nowrap">Learn More</button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-end">
+                    <div class="bg-white/90 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-lg max-w-md w-full">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center bg-blue-100 rounded-lg mb-4">
+                            <i class="ri-cpu-line text-primary ri-2x"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Innovative Technology</h3>
+                        <p class="text-sm sm:text-base text-gray-600">Leading the future with the latest technological advancements to power your business growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-2">Our <span class="text-primary">Features</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover what makes our solutions stand out from the competition</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded mb-4">
+                        <i class="ri-code-box-line text-primary ri-lg"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">Custom Software</h3>
+                    <p class="text-sm sm:text-base text-gray-600">Build tailor-made software solutions that perfectly align with your business needs.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded mb-4">
+                        <i class="ri-smartphone-line text-purple-500 ri-lg"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">Mobile Development</h3>
+                    <p class="text-sm sm:text-base text-gray-600">Create engaging mobile experiences for iOS and Android platforms with our expert team.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded mb-4">
+                        <i class="ri-cloud-line text-blue-400 ri-lg"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">Cloud Solutions</h3>
+                    <p class="text-sm sm:text-base text-gray-600">Leverage cloud technologies to scale your applications and reduce infrastructure costs.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 flex items-center justify-center bg-teal-100 rounded mb-4">
+                        <i class="ri-database-2-line text-teal-500 ri-lg"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">Database Solutions</h3>
+                    <p class="text-sm sm:text-base text-gray-600">Design and maintain efficient database architectures for optimal data management.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 flex items-center justify-center bg-teal-100 rounded mb-4">
+                        <i class="ri-plug-line text-teal-500 ri-lg"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">API Integration</h3>
+                    <p class="text-sm sm:text-base text-gray-600">Seamless integration with third-party services and platforms to extend your application.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded mb-4">
+                        <i class="ri-shield-check-line text-blue-500 ri-lg"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">Security</h3>
+                    <p class="text-sm sm:text-base text-gray-600">Implement robust security measures to protect your applications and sensitive data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-2">Our <span class="text-primary">Services</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-6 sm:gap-8">
+                <!-- Service Navigation -->
+                <div class="lg:w-1/4">
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="p-4 border-b border-gray-100">
+                            <h3 class="font-semibold text-gray-800">Services</h3>
+                        </div>
+                        <div class="service-nav flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible">
+                            <button class="service-tab active min-w-max lg:w-full text-left px-4 py-3 bg-primary text-white font-medium flex items-center">
+                                <i class="ri-code-s-slash-line mr-2"></i>
+                                Software Development
+                            </button>
+                            <button class="service-tab min-w-max lg:w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 font-medium flex items-center">
+                                <i class="ri-global-line mr-2"></i>
+                                Web Development
+                            </button>
+                            <button class="service-tab min-w-max lg:w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 font-medium flex items-center">
+                                <i class="ri-smartphone-line mr-2"></i>
+                                Mobile App Development
+                            </button>
+                            <button class="service-tab min-w-max lg:w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 font-medium flex items-center">
+                                <i class="ri-cloud-line mr-2"></i>
+                                Cloud Solutions
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Details -->
+                <div class="lg:w-3/4">
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/2 p-6 sm:p-8">
+                                <h3 class="text-xl sm:text-2xl font-bold mb-4">Software Development</h3>
+                                <p class="text-sm sm:text-base text-gray-600 mb-6">End-to-end custom software development tailored to your specific business needs and goals.</p>
+                                
+                                <h4 class="font-semibold text-gray-800 mb-3">Key Benefits:</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                                        <span class="text-sm sm:text-base">Custom solutions built from the ground up</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                                        <span class="text-sm sm:text-base">Modern technology stack for optimal performance</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                                        <span class="text-sm sm:text-base">Agile development methodology</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                                        <span class="text-sm sm:text-base">Regular updates and continuous improvement</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="md:w-1/2 min-h-[300px] sm:min-h-[400px]" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80'); background-size: cover; background-position: center;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-2">Client <span class="text-primary">Testimonials</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">What our clients say about working with us</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-lg shadow-sm p-6 sm:p-8 relative">
+                    <div class="absolute -top-5 left-8 w-10 h-10 flex items-center justify-center bg-primary rounded-full">
+                        <i class="ri-double-quotes-l text-white"></i>
+                    </div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg'); background-size: cover;"></div>
+                        <div>
+                            <h4 class="font-semibold">Emily Rodriguez</h4>
+                            <p class="text-sm text-gray-600">Product Manager, CompanyX</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-sm sm:text-base text-gray-700 italic mb-6">"The team at SoftNova Labs are true professionals. Their attention to detail and commitment to quality is impressive. They delivered our web application on time and on budget!"</p>
+                    
+                    <div class="flex justify-center">
+                        <span class="w-2 h-2 rounded-full bg-primary mx-1"></span>
+                        <span class="w-2 h-2 rounded-full bg-gray-300 mx-1"></span>
+                        <span class="w-2 h-2 rounded-full bg-gray-300 mx-1"></span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 md:py-20 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-bold mb-2">150+</div>
+                    <div class="text-sm sm:text-base">Projects Completed</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-bold mb-2">95%</div>
+                    <div class="text-sm sm:text-base">Client Satisfaction</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-bold mb-2">50+</div>
+                    <div class="text-sm sm:text-base">Expert Team Members</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-bold mb-2">10+</div>
+                    <div class="text-sm sm:text-base">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-2">Get In <span class="text-primary">Touch</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Have a project in mind? Contact our experts and let's hear from you!</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-6 sm:gap-8">
+                <!-- Contact Information -->
+                <div class="lg:w-1/3">
+                    <div class="bg-primary bg-opacity-10 rounded-lg p-6 sm:p-8">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-6">Contact Information</h3>
+                        <p class="text-sm sm:text-base text-gray-600 mb-8">Fill out the form or contact us directly and we'll get back to you shortly.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mr-4">
+                                    <i class="ri-phone-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs sm:text-sm text-gray-500">Phone</p>
+                                    <p class="text-sm sm:text-base font-medium">+254751234567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mr-4">
+                                    <i class="ri-mail-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs sm:text-sm text-gray-500">Email</p>
+                                    <p class="text-sm sm:text-base font-medium">contact@softnovalabs.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mr-4">
+                                    <i class="ri-map-pin-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs sm:text-sm text-gray-500">Address</p>
+                                    <p class="text-sm sm:text-base font-medium">Innovation Way, 12th Street,<br>Nairobi, WHP 00100</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 sm:mt-10">
+                            <p class="text-xs sm:text-sm font-medium text-gray-700 mb-4">Follow Us</p>
+                            <div class="flex space-x-3">
+                                <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-white rounded-full hover:bg-primary hover:text-white transition">
+                                    <i class="ri-facebook-fill text-gray-600 hover:text-white"></i>
+                                </a>
+                                <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-white rounded-full hover:bg-primary hover:text-white transition">
+                                    <i class="ri-twitter-fill text-gray-600 hover:text-white"></i>
+                                </a>
+                                <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-white rounded-full hover:bg-primary hover:text-white transition">
+                                    <i class="ri-linkedin-fill text-gray-600 hover:text-white"></i>
+                                </a>
+                                <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-white rounded-full hover:bg-primary hover:text-white transition">
+                                    <i class="ri-github-fill text-gray-600 hover:text-white"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="lg:w-2/3">
+                    <div class="bg-white rounded-lg shadow-sm p-6 sm:p-8">
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">First Name</label>
+                                    <input type="text" class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:border-primary focus:ring-0" placeholder="Your first name">
+                                </div>
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">Last Name</label>
+                                    <input type="text" class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:border-primary focus:ring-0" placeholder="Your last name">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4 sm:mb-6">
+                                <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">Email</label>
+                                <input type="email" class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:border-primary focus:ring-0" placeholder="your@email.com">
+                            </div>
+                            
+                            <div class="mb-4 sm:mb-6">
+                                <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">Subject</label>
+                                <input type="text" class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:border-primary focus:ring-0" placeholder="How can we help you?">
+                            </div>
+                            
+                            <div class="mb-6 sm:mb-8">
+                                <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">Message</label>
+                                <textarea rows="4" class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:border-primary focus:ring-0" placeholder="Your message..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="bg-primary text-white px-5 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium !rounded-button hover:bg-blue-600 transition whitespace-nowrap w-full sm:w-auto">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 sm:pt-16 pb-6 sm:pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 flex items-center justify-center bg-primary rounded-full mr-2">
+                            <i class="ri-code-s-slash-line text-white"></i>
+                        </div>
+                        <span class="font-['Pacifico'] text-xl text-white">SoftNova Labs</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-400 mb-6">Transforming ideas into powerful software solutions. We help businesses navigate the digital landscape with cutting-edge technology.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+                            <i class="ri-facebook-fill text-white ri-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+                            <i class="ri-twitter-fill text-white ri-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+                            <i class="ri-linkedin-fill text-white ri-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+                            <i class="ri-github-fill text-white ri-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Company Links -->
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-xs sm:text-sm text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-xs sm:text-sm text-gray-400 hover:text-white transition">Our Team</a></li>
+                        <li><a href="#" class="text-xs sm:text-sm text-gray-400 hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="text-xs sm:text-sm text-gray-400 hover:text-white transition">News</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services Links -->
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-xs sm:text-sm text-gray-400 hover:text-white transition">Software Development</a></li>
+                        <li><a href="#" class="text-xs sm:text-sm text-gray-400 hover:text-white transition">Web Development</a></li>
+                        <li><a href="#" class="text-xs sm:text-sm text-gray-400 hover:text-white transition">Mobile App Development</a></li>
+                        <li><a href="#" class="text-xs sm:text-sm text-gray-400 hover:text-white transition">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources Links -->
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-xs sm:text-sm text-gray-400 hover:text-white transition">Case Studies</a></li>
+                        <li><a href="#" class="text-xs sm:text-sm text-gray-400 hover:text-white transition">Documentation</a></li>
+                        <li><a href="#" class="text-xs sm:text-sm text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-xs sm:text-sm text-gray-400 hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="border-gray-800 mb-6 sm:mb-8">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-center">
+                <div class="mb-4 sm:mb-0">
+                    <p class="text-xs text-gray-500">&copy; 2025 SoftNova Labs. All rights reserved.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+                    <a href="#" class="text-xs text-gray-500 hover:text-white transition">Legal</a>
+                    <a href="#" class="text-xs text-gray-500 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-xs text-gray-500 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-xs text-gray-500 hover:text-white transition">Cookie Policy</a>
+                    <a href="#" class="text-xs text-gray-500 hover:text-white transition">GDPR</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="fixed bottom-6 right-6 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-primary rounded-full shadow-lg hover:bg-blue-600 transition opacity-0 invisible transition-all duration-300" id="back-to-top">
+        <i class="ri-arrow-up-line text-white ri-lg"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        // Service tabs functionality
+        const serviceTabs = document.querySelectorAll('.service-tab');
+        
+        serviceTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                serviceTabs.forEach(t => t.classList.remove('active', 'bg-primary', 'text-white'));
+                serviceTabs.forEach(t => t.classList.add('text-gray-700', 'hover:bg-gray-50'));
+                
+                tab.classList.add('active', 'bg-primary', 'text-white');
+                tab.classList.remove('text-gray-700', 'hover:bg-gray-50');
+                
+                // Here you would typically load the appropriate service content
+                // For this demo, we're just changing the active tab styling
+            });
+        });
+    </script>
+</body>
+</html>
